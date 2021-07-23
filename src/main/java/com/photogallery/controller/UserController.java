@@ -24,22 +24,22 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public Mono<UserDto> getPhoto(@PathVariable long id){
+    public Mono<UserDto> getUser(@PathVariable long id){
         return userService.getUser(id);
     }
 
     @PostMapping("/admin/insert")
-    public Mono<UserDto> savePhoto(@RequestBody Mono<UserDto> userDtoMono) {
+    public Mono<UserDto> saveUser(@RequestBody Mono<UserDto> userDtoMono) {
         return userService.insertUser(userDtoMono);
     }
 
     @PutMapping("/admin/update/{id}")
-    public Mono<UserDto> updatePhoto(@RequestBody Mono<UserDto> userDtoMono, @PathVariable long id) {
+    public Mono<UserDto> updateUser(@RequestBody Mono<UserDto> userDtoMono, @PathVariable long id) {
         return userService.updateUser(userDtoMono, id);
     }
 
     @DeleteMapping("/admin/delete/{id}")
-    public Mono<Void> deletePhoto(@PathVariable long id){
+    public Mono<Void> deleteUser(@PathVariable long id){
         return userService.deleteUser(id);
     }
 
